@@ -2,6 +2,7 @@ import nltk
 from nltk.chat.util import Chat, reflections
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
+# Define pairs of patterns and responses
 pairs = [
     [
         r"Hi my name is (.*)",
@@ -65,6 +66,7 @@ pairs = [
     ],
 ]
 
+# Create a chatbot
 def chatbot():
     print("Chatbot : Hi! I'm Chatbot. How can I help you today?")
     chat = Chat(pairs, reflections)
@@ -76,6 +78,7 @@ def chatbot():
         response = chat.respond(user_input)
         print("Chatbot :", response)
 
+# Run the chatbot
 if __name__ == "__main__":
     nltk.download('vader_lexicon')
     chatbot()
